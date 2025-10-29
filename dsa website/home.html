@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA Programs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar {
+            text-align: center;
+            padding: 15px 0;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            margin: 0 10px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .navbar a:hover::before {
+            left: 0;
+        }
+
+        .navbar a:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .navbar a.active {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .navbar a {
+                padding: 10px 20px;
+                font-size: 16px;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home1.html" target="bottom" class="home active">HOME</a>
+        <a href="about.html" target="bottom" class="about">ABOUT</a>
+        <a href="frameforprog.html" target="bottom" class="programs">PROGRAMS</a>
+    </div>
+
+    <script>
+        // Highlight active link
+        const links = document.querySelectorAll('.navbar a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                links.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

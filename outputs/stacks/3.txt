@@ -1,0 +1,2 @@
+Local variable a: 5
+Global variable a: 10

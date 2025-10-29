@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - PHP Programming</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-section {
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-image:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 3em;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-box {
+            flex: 1;
+            min-width: 200px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            border-color: #667eea;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+        }
+
+        .feature-icon {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-box:hover .feature-icon {
+            transform: rotateY(360deg);
+        }
+
+        .feature-box h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease-out;
+            animation-delay: 0.3s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .content-section h2 {
+            color: #764ba2;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about-text {
+            color: #333;
+            line-height: 1.8;
+            font-size: 1.1em;
+            text-align: justify;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .about-text:hover {
+            background: rgba(102, 126, 234, 0.05);
+            border-left-color: #667eea;
+            border-radius: 5px;
+            transform: translateX(10px);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .hero-image { width: 200px; height: 200px; }
+            .feature-box { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>Welcome to PHP Programming</h1>
+            <div class="hero-image"></div>
+            
+            <div class="features">
+                <div class="feature-box">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Fast</h3>
+                    <p>High-performance server-side scripting</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">💡</div>
+                    <h3>Simple</h3>
+                    <p>Easy to learn and implement</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure</h3>
+                    <p>Built-in security features</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content-section">
+            <h2>About PHP</h2>
+            
+            <p class="about-text">PHP (Hypertext Preprocessor) is a powerful and widely used server-side scripting language designed specifically for web development. Renowned for its simplicity, flexibility, and efficiency, PHP enables developers to create dynamic and interactive web pages that can communicate seamlessly with databases and handle complex server-side logic. Since its creation by Rasmus Lerdorf in 1994, PHP has grown into a cornerstone of modern web technologies, powering millions of websites and popular platforms such as WordPress, Facebook, and Wikipedia. It plays a crucial role in the development of content management systems (CMS), e-commerce platforms, and web-based applications across industries.</p>
+
+            <p class="about-text">At its core, PHP is an open-source, interpreted language that integrates smoothly with HTML, allowing developers to embed code directly into web pages. This unique capability bridges the gap between client-side and server-side development, enabling real-time processing of user inputs and database interactions. PHP supports a vast range of databases including MySQL, PostgreSQL, and SQLite, making it an ideal choice for building scalable and data-driven web applications. Its compatibility with multiple operating systems—such as Windows, Linux, and macOS—and web servers like Apache and Nginx further enhances its accessibility and versatility in deployment.</p>
+
+            <p class="about-text">PHP follows procedural, object-oriented, and functional programming paradigms, giving developers flexibility in designing efficient and maintainable code structures. Through its extensive standard library and built-in functions, PHP simplifies complex tasks such as file handling, form processing, session management, and encryption. Its integration with front-end technologies like HTML, CSS, and JavaScript enables the creation of rich, interactive user experiences while maintaining efficient server-side performance. The language's loose typing and dynamic nature make it beginner-friendly, yet powerful enough to handle enterprise-level web solutions.</p>
+
+            <p class="about-text">Security and performance are central to PHP's evolution. With features such as input validation, data sanitization, and session control, PHP helps developers build secure applications that safeguard user data and prevent common web vulnerabilities. Modern versions of PHP have significantly improved speed through advanced just-in-time (JIT) compilation and optimized memory management. Furthermore, PHP's modular architecture allows developers to extend its capabilities via frameworks like Laravel, Symfony, and CodeIgniter, which promote rapid development, reusability, and adherence to best practices such as MVC (Model-View-Controller) architecture.</p>
+
+            <p class="about-text">The strength of PHP lies in its vast and active global community, which continually contributes to its growth through open-source libraries, documentation, and regular updates. Its integration with modern development tools, APIs, and cloud environments ensures that PHP remains relevant in the rapidly evolving web ecosystem. Learning PHP equips aspiring developers with essential skills in backend programming, database management, and web application architecture. Beyond its simplicity, PHP embodies the principles of adaptability and innovation, empowering developers to build dynamic, secure, and high-performing web applications that shape today's digital world.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Session expiry increased to 1 hour

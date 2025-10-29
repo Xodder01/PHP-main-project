@@ -1,0 +1,1 @@
+Array ( [SERVER_NAME] => localhost [REQUEST_METHOD] => GET ... )
